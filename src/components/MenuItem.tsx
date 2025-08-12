@@ -12,7 +12,7 @@ export default function MenuItem({item, addItem}: MenuItemProps) {
         <p>{item.name}</p>
         <p className="font-black">${item.price}</p>
     </button>
-    
+  
     </>
   )
 }
