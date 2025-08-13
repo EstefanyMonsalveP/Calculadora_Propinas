@@ -4,6 +4,8 @@ type MenuItemProps = {
     item : MenuItem 
     addItem : (item : MenuItem) => void
 }
+//Componente para mostrar la lista de items del arreglo
+//Añade el item seleccionado a la orden
 export default function MenuItem({item, addItem}: MenuItemProps) {
   return (
     <>

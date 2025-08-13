@@ -5,7 +5,9 @@ type OrderContentProps = {
     order: OrderItem [],
     deleteItem: (id: MenuItem['id']) => void
 }
-
+//Componente que muestra el listado de items de la orden
+//Muestra el nombre, precio unitario, cantidad y subtotal de cada item
+//Incluye boton para eliminar un item
 export default function orderContents({order, deleteItem} : OrderContentProps) {
   return (
     <>
@@ -14,9 +16,7 @@ export default function orderContents({order, deleteItem} : OrderContentProps) {
     </div>
 
     <div className="space-y-3 mt-3">
-        {order.length === 0? 
-        <p className="text-center"> La orden esta vacia</p>
-    : 
+        {
         (order.map( item => (
             <div key={item.id}
             

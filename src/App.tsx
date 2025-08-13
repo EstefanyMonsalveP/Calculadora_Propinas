@@ -19,6 +19,7 @@ function App() {
         <div className="space-y-5" >
           <h2 className="text-4xl font-black">Menú</h2>
 
+          
           <div className="space-y-3 mt-10">
             {menuItems.map(item => (
             <MenuItem
@@ -32,7 +33,9 @@ function App() {
         </div>
 
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10 ml-10">
-          <OrderContents
+          {order.length > 0 ? (
+          <>
+           <OrderContents
           order = {order}
           deleteItem={deleteItem}/>
 
@@ -45,9 +48,12 @@ function App() {
           tip={tip}
           saveOrder = {saveOrder}
           />
-        </div>
+        </>
+          ) : (
+            <p className="text-center"> La orden esta vacia</p>
+          )}
         
-        
+      </div>
       </main>
     </>
   )
