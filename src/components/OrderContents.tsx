@@ -3,7 +3,7 @@ import { formatCurrency } from "../helpers"
 
 type OrderContentProps = {
     order: OrderItem [],
-    deleteItem: (item:MenuItem) => void
+    deleteItem: (id: MenuItem['id']) => void
 }
 
 export default function orderContents({order, deleteItem} : OrderContentProps) {
@@ -30,7 +30,7 @@ export default function orderContents({order, deleteItem} : OrderContentProps) {
                 </p>
                 </div>
              <button className="bg-red-600 h-7 w-7 rounded-full text-white font-black cursor-pointer"
-             onClick={()=> deleteItem(item)}>
+             onClick={()=> deleteItem(item.id)}>
                 X
             </button>
             </div>

@@ -26,14 +26,14 @@ export default function useOrder(){
     }
 
     //Eliminar un item de la orden
-    const deleteItem = (item:MenuItem) => {
+    const deleteItem = (id : MenuItem['id']) => {
         //Busca si el item existe en la orden comparando por id
-        const itemExist = order.find(orderItem  => orderItem.id === item.id)
+        const itemExist = order.find(orderItem  => orderItem.id === id)
 
         //Si el item existe
         if(itemExist){
             //Filtra los items que no coincidan con el id
-            const updateOrder = order.filter(orderItem => orderItem.id !== item.id)
+            const updateOrder = order.filter(orderItem => orderItem.id !== id)
 
             //Actualiza la orden
             setOrder(updateOrder)
