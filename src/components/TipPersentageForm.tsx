@@ -36,6 +36,7 @@ export const TipPersentageForm = ({setTip}: TipPersentageFormProps) => {
                     type="radio"
                     name = "tip"
                     value = {tip.value}
+                    //Actualiza el valor seleccionado de la propina
                     onChange={e => setTip(+e.target.value)}
                     >
                     </input>
