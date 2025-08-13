@@ -40,12 +40,18 @@ export default function useOrder(){
             setOrder(updateOrder)
         }
     }
+
+    const saveOrder = () => {
+        setOrder([])
+        setTip(0)
+    }
     return{
         order,
         tip,
         setTip,
         addItem,
         deleteItem,
+        saveOrder
         
     }
 }

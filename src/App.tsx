@@ -5,9 +5,10 @@ import OrderContents from "./components/OrderContents";
 import OrderTotals from "./components/OrderTotals";
 import { TipPersentageForm } from "./components/TipPersentageForm";
 
+
 function App() {
 
-  const {order, addItem, deleteItem, tip,setTip} = useOrder();
+  const {order, addItem, deleteItem, tip,setTip , saveOrder} = useOrder();
   return (
     <>
       <header className="bg-amber-200 py-5">
@@ -36,11 +37,13 @@ function App() {
           deleteItem={deleteItem}/>
 
           <TipPersentageForm
+          tip = {tip}
           setTip = {setTip}/>
 
           <OrderTotals
           order={order}
           tip={tip}
+          saveOrder = {saveOrder}
           />
         </div>
         

@@ -5,10 +5,11 @@ import { useMemo } from "react";
 type orderTotalsProps = {
   order : OrderItem []
   tip:number
+  saveOrder: () => void
 }
 
 //Componente que muestras los valores a pagar de la orden (Consumo)
-export default function OrderTotals({order, tip}: orderTotalsProps ) {
+export default function OrderTotals({order, tip, saveOrder}: orderTotalsProps ) {
   //Calcula el subtotal solo cuando cambia la orden
   const subTotal = useMemo(() => {
     return order.reduce((total,item) => total + (item.price * item.quantity), 0)
@@ -36,8 +37,10 @@ export default function OrderTotals({order, tip}: orderTotalsProps ) {
       </p>
      </div>
 
-    <button>
-
+    <button className="w-full bg-black p-3 uppercase text-white font-bold mt-10 disabled:opacity-10"
+    disabled={totalOrder === 0}
+    onClick={() => saveOrder()}>
+      Guardar la orden
     </button>
     </>
   )

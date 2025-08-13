@@ -20,27 +20,29 @@ const tipOptions = [
 //Type para definir el tipo de dato del prop (setTip)
 type TipPersentageFormProps = {
     setTip: React.Dispatch<React.SetStateAction<number>>
+    tip: number
 }
 
 //Componente para mostrar y seleccionar las diferentes opciones de propina (Tip)
-export const TipPersentageForm = ({setTip}: TipPersentageFormProps) => {
+export const TipPersentageForm = ({setTip, tip}: TipPersentageFormProps) => {
   return (
     <>
      <div>
         <h3 className="font-black text-2xl">Propina: </h3>
         <form>
-            {tipOptions.map(tip=> (
-                <div key={tip.id} className="flex gap-2 mt-1">
+            {tipOptions.map(tipOption=> (
+                <div key={tipOption.id} className="flex gap-2 mt-1">
                     <input 
-                    id = {tip.id}
+                    id = {tipOption.id}
                     type="radio"
                     name = "tip"
-                    value = {tip.value}
+                    value = {tipOption.value}
+                    checked = {tipOption.value === tip}
                     //Actualiza el valor seleccionado de la propina
                     onChange={e => setTip(+e.target.value)}
                     >
                     </input>
-                    <label htmlFor={tip.id}>{tip.label}</label> 
+                    <label htmlFor={tipOption.id}>{tipOption.label}</label> 
                 </div>
             ))}
         </form>
